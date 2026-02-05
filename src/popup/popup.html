@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Image Downloader</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Amazon Images</h1>
+            <span id="imageCount" class="badge">0</span>
+        </header>
+
+        <div class="controls">
+            <button id="scanBtn" class="btn secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                Tara
+            </button>
+            <button id="downloadAllBtn" class="btn primary" disabled>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m14-7l-5 5-5-5m5 5V3"></path>
+                </svg>
+                Hepsini İndir
+            </button>
+            <button id="downloadZipBtn" class="btn secondary" disabled title="ZIP Olarak İndir">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                ZIP
+            </button>
+        </div>
+
+        <div id="statusMessage" class="status-message hidden"></div>
+
+        <div id="gallery" class="gallery">
+            <!-- Images will be inserted here -->
+            <div class="empty-state">
+                <p>Resimleri görmek için "Tara" butonuna basın.</p>
+            </div>
+        </div>
+
+        <div id="selectionControls" class="selection-controls hidden">
+            <button id="downloadSelectedBtn" class="btn accent">Seçilenleri İndir (<span
+                    id="selectedCount">0</span>)</button>
+        </div>
+    </div>
+    <script src="../libs/jszip.min.js"></script>
+    <script type="module" src="popup.js"></script>
+</body>
+
+</html>
